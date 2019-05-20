@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         for j in 0...8 {
             for i in 0...4 {
                 let addButton = UIButton()
-                addButton.frame = CGRect(x:15+(i*100), y: 25+(j*100), width: 80, height: 80)
+                addButton.frame = CGRect(x:15+(i*100), y: 25+(j*100), width: 125, height: 125)
                 addButton.layer.cornerRadius = addButton.frame.width/2
                 addButton.backgroundColor = nil
                 addButton.tag = tag
@@ -47,10 +47,10 @@ class ViewController: UIViewController {
     @objc func muncul(sender: UIButton!) {
         let randomNumber = Int.random(in: 0...9)
         sender.backgroundColor = colorPallete[randomNumber]
-        sender.layer.shadowRadius = 20
+        sender.layer.shadowRadius = 30
         sender.layer.shadowColor = shadowColorPallete[randomNumber]
         sender.layer.shadowOpacity = 0.9
-        sender.layer.shadowOffset = CGSize(width: 2,height: 1)
+        sender.layer.shadowOffset = CGSize(width: 2,height: 2)
 //        let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(change), userInfo: nil, repeats: false)
         
         countTap += 1
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         }else if countTap == 20 {
             duration = duration-2
         }else if countTap == 25 {
-            duration = 2
+            duration = 1.5
             print(duration)
         }
     
